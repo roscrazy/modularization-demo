@@ -1,0 +1,61 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.21'
+    ext.kotlin_version = '1.2.10'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+/*------------------------------- Script to generate the dependency Graph--------------------------*/
+
+project.task("generate-dependency-graph-dot") {
+    mustRunAfter "clean"
+    def graphBuildDir = "build/dependency-graph"
+    def dotFile = project.file "$graphBuildDir/dependencies.dot"
+
+    doLast {
+        project.delete graphBuildDir
+        project.mkdir graphBuildDir
+        dotFile << "digraph dependencies {\n"
+        project.subprojects.forEach {
+            Project subProject -> try {
+                Configuration implementationConfig = subProject.configurations["implementation"]
+                implementationConfig.dependencies.grep {
+                    it.respondsTo("getDependencyProject")
+                }.forEach {
+                    dotFile << """ "$subProject.name" -> "$it.dependencyProject.name"\n"""
+                }
+
+                Configuration apiConfig = subProject.configurations["api"]
+                apiConfig.dependencies.grep {
+                    it.respondsTo("getDependencyProject")
+                }.forEach {
+                    dotFile << """ "$subProject.name" -> "$it.dependencyProject.name"\n"""
+                }
+            } catch (UnknownConfigurationException ignored) { }
+        }
+        dotFile << "}\n"
+    }
+}

@@ -1,0 +1,46 @@
+Parallel execution with configuration on demand is an incubating feature.
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild
+:app:compileDebugAidl
+:app:compileDebugRenderscript
+:app:checkDebugManifest
+:app:generateDebugBuildConfig
+:app:generateDebugResValues
+:app:generateDebugResources
+:app:mergeDebugResources
+:app:createDebugCompatibleScreenManifests
+:app:processDebugManifest
+:app:splitsDiscoveryTaskDebug
+:app:processDebugResources
+:app:kaptGenerateStubsDebugKotlin
+:app:kaptDebugKotlin
+:app:compileDebugKotlin
+:app:prepareLintJar UP-TO-DATE
+:app:generateDebugSources
+:app:javaPreCompileDebug
+:app:compileDebugJavaWithJavac
+:app:compileDebugNdk NO-SOURCE
+:app:compileDebugSources
+:app:mergeDebugShaders
+:app:compileDebugShaders
+:app:generateDebugAssets
+:app:mergeDebugAssets
+:app:transformClassesWithDexBuilderForDebug
+D8 is used to build dex.
+Warning: stripped invalid locals information from 1 method.
+Some warnings are typically a sign of using an outdated Java toolchain. To fix, recompile the source with an updated toolchain.
+Warning: stripped invalid locals information from 1 method.
+Some warnings are typically a sign of using an outdated Java toolchain. To fix, recompile the source with an updated toolchain.
+:app:transformDexArchiveWithExternalLibsDexMergerForDebug
+:app:transformDexArchiveWithDexMergerForDebug
+D8 is used to merge dex.
+:app:mergeDebugJniLibFolders
+:app:transformNativeLibsWithMergeJniLibsForDebug
+:app:processDebugJavaRes NO-SOURCE
+:app:transformResourcesWithMergeJavaResForDebug
+:app:validateSigningDebug
+:app:packageDebug
+:app:assembleDebug
+
+BUILD SUCCESSFUL in 3m 0s
+28 actionable tasks: 27 executed, 1 up-to-date

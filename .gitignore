@@ -1,0 +1,48 @@
+# Built application files
+*.apk
+*.ap_
+
+.DS_Store
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+BuildExperiment-1module/bin/
+BuildExperiment-1module/gen/
+BuildExperiment-1module/out/
+BuildExperiment-1module/.gradle/
+BuildExperiment-1module/build/
+BuildExperiment-1module/local.properties
+BuildExperiment-1module/proguard/
+BuildExperiment-1module/.navigation/
+BuildExperiment-1module/captures/
+BuildExperiment-1module/.idea
+BuildExperiment-1module/.externalNativeBuild
+
+BuildExperiment-15module/bin/
+BuildExperiment-15module/gen/
+BuildExperiment-15module/out/
+BuildExperiment-15module/.gradle/
+BuildExperiment-15module/build/
+BuildExperiment-15module/local.properties
+BuildExperiment-15module/proguard/
+BuildExperiment-15module/.navigation/
+BuildExperiment-15module/captures/
+BuildExperiment-15module/.idea
+BuildExperiment-15module/.externalNativeBuild
+
+BuildExperiment-15module-parallel/bin/
+BuildExperiment-15module-parallel/gen/
+BuildExperiment-15module-parallel/out/
+BuildExperiment-15module-parallel/.gradle/
+BuildExperiment-15module-parallel/build/
+BuildExperiment-15module-parallel/local.properties
+BuildExperiment-15module-parallel/proguard/
+BuildExperiment-15module-parallel/.navigation/
+BuildExperiment-15module-parallel/captures/
+BuildExperiment-15module-parallel/.idea
+BuildExperiment-15module-parallel/.externalNativeBuild
